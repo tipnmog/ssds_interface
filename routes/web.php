@@ -16,3 +16,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/* Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard.index');
+})->name('dashboard'); */
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/ui-elements', function () {
+    return view('dashboard.ui-elements');
+})->name('ui-elements');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/tables', function () {
+    return view('dashboard.tables');
+})->name('tables');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/forms', function () {
+    return view('dashboard.forms');
+})->name('forms');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/login', function () {
+    return view('dashboard.login');
+})->name('login');
